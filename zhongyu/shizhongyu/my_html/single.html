@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单列布局</title>
+    <style type="text/css">
+        .container{
+            max-width: 1000px;/*设置最大宽度*/
+            margin:0 auto;/*设置内部的块元素水平居中*/
+        }
+        .header{
+            height: 50px;
+            background: #21ff80;
+        }
+        .main{
+            height: 600px;
+            background: #80007f;
+        }
+        .footer{
+            height: 50px;
+            background: #21ff80;
+        }
+    </style>
+</head>
+<body>
+<h4>基本思路：</h4>
+<p>1.页面头部，主体，底部全部放在同一个容器中统一配置<br>
+   2.容器中的子块只需设置高度即可</p>
+<!-- dom -->
+<div class="container">
+    <div class="header">头部</div>
+    <div class="main">主体</div>
+    <div class="footer">底部</div>
+</div>
+</body>
+</html>
+<!--
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三列布局</title>
+    <style type="text/css">
+        .left{
+            width: 200px;
+            height: 600px;
+            background: #b6ed7c;
+            float: left;
+        }
+        .right{
+            width: 200px;
+            height: 600px;
+            background: #947ded;
+            float: right;
+        }
+        .main{
+            height: 600px;
+            margin-left: 200px;
+            margin-right: 200px;
+            background: #c0fcff;
+        }
+    </style>
+</head>
+<body>
+<h4>基本思路：</h4>
+<p>
+    1.左右两列采用浮动+宽度<br>
+    2.中间主体部分采用margin挤出来<br>
+    3.DOM顺序不能乱，必须先写左右两侧，再写中间<br>
+</p>
+&lt;!&ndash;  dom  &ndash;&gt;
+<div class="left">左侧</div>
+<div class="right">右侧</div>
+<div class="main">主体</div>
+</body>
+</html>-->
+
+<!--<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位两列布局</title>
+    <style type="text/css">
+        .container{
+            /*position: absolute;
+            left:0;//绝对定位
+            right: 0;*/
+            position: relative;//相对定位
+        margin: auto;
+            max-width: 960px;
+        }
+        .left{
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 200px;
+            height: 600px;
+            background: skyblue;
+        }
+        .right{
+            position: absolute;
+            top:0;
+            right: 0;
+            width: 750px;
+            height: 600px;
+            background: #6dedca;
+        }
+    </style>
+</head>
+<body>
+<h4>基本思路：</h4>
+<p>
+    1.给两列设置一个父级区块，并设置定位属性，一般设置为相对定位<br>
+    2.给左两个区块分别使用绝对定位<br>
+    3.父级区块/定义父级区块必须摄者宽度<br>
+</p>
+&lt;!&ndash;dom&ndash;&gt;
+<div class="container clear">
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+</div>
+</body>
+</html>-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style type="text/css">
+        .container{
+            width: 960px;
+            margin:0 auto;
+            background: yellow;
+            overflow: hidden;
+        }
+        .clear{
+            -ms-zoom: 1;
+        }
+        .clear:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .left{
+            width: 200px;
+            height: 600px;
+            background:skyblue;
+            float: left;
+        }
+        .right{
+            width: 750px;
+            height: 600px;
+            background: cornflowerblue;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<h4>基本思路：</h4>
+<p>
+    1.要给左右两列添加一个父给区块<br>
+    2.给左右两个区块设置浮动<br>
+    3.给父级快添加一个after伪类让子块撑开父类<br>
+</p>
+&lt;!&ndash;dom&ndash;&gt;
+<div class="container clear">
+    <div class="left">左侧</div>
+    <div class="right">右侧</div>
+</div>
+</body>
+</html>-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style type="text/css">
+        .left{
+            width: 200px;
+            height: 600px;
+            background:skyblue;
+            float:left;
+        }
+        .main{
+            height: 600px;
+            background: cyan;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body>
+<h4>基本思路：</h4>
+<p>
+    1.左侧固定，并设置为左浮动<br>
+    2.右侧主体部分设置一个右边距<br>
+</p>
+&lt;!&ndash;  DOM  &ndash;&gt;
+<div class="left">左侧</div>
+<div class="main">主体</div>
+</body>
+</html>-->
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单列布局2</title>
+    <style type="text/css">
+        .header{
+            height: 100px;
+            font-family: "微软雅黑";
+            margin-top: 30px;
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .main{
+            margin-left: 200px;
+            margin-right: 200px;
+            word-spacing: 10px;
+            line-height: 35px;
+        }
+        .heading{
+            margin-bottom:20px;
+        }
+        .footer{
+            height: 50px;
+            line-height:100px;
+        }
+    </style>
+</head>
+<body>
+&lt;!&ndash;-   DOM  -&ndash;&gt;
+
+<div class="header">
+    <div class="text" style="text-align: center">消费者告知书</div>
+</div>
+<div class="main">
+    <div class="text" style="text-align: left">
+        <div class="heading">为方便您更好的选购本公司商品，请仔细阅读并理解一下告知书的内容，您同意下述告知书内容后方可下单购买，如果您对本告知书的内容有疑问或不同意本告知书的任一条款，请不要进行后续操作。</div>
+        <div>1、消费者在本公司网站购买的商品依据原产地或原销售地有关质量、安全、卫生、环保、标识等标准或技术规范要求生产和销售，可能与中国大陆的标准存在差异，消费者应自行承担相当风险，本公司跨境商品主要来源于美国，商品主要遵循原产国、美国FDA”21 CFR Part-111”管理标准。</div>
+        <div>2、相关商品直接购自境外，可能无中文标签。消费者可以通过网站查看商品中文电子标签。</div>
+        <div>3、商品的购买人或收件人 将记录为进口方，必须遵守中国的法律法规。</div>
+        <div>4、消费者购买的商品仅限个人自用，不得进行二次销售。</div>
+        <div>5、消费者现委托商家及代理人或跨境电商平台企业、物流商、支付机构办理申报、代缴税款、代理购汇等通关事宜，并承诺提供（或通过授权的第三方提供）真实、准确及有效的身份信息（如姓名、身份证号码）供商家及代理人或跨境电商平台企业、物流商、支付机构依法办理实名审核、商品清关、购汇手续。</div>
+        <div>6、消费者准备购买的该商品价格已包税。</div>
+        <div>7、跨境电商综合税需按一般贸易增值税及消费税税额的70%征收，本公司代证代缴，税费以提交订单时的金额为准。</div>
+        <div>8、根据跨境电子商务零售进口税收政策，自2019年1月1日起，个人单笔交易限值人民币5000元，个人年度交易限值人民币26000元。</div>
+    </div>
+    <div class="footer">
+        <div class="text" style="text-align: left">
+            本公司精选全球好货，严控每一个环节，为您提供正品保障。
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>-->

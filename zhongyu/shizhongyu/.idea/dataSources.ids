@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - zhongyu@localhost" uuid="0c13f9fc-7b68-4925-9ace-6cdf392a7cb3">
+    <database-info product="MySQL" version="5.5.53" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.47 ( Revision: fe1903b1ecb4a96a917f7ed3190d80c049b1de29 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
+      <schema id="1" name="zhongyu"/>
+      <table id="2" parent="1" name="user"/>
+      <column id="3" parent="2" name="userId">
+        <mandatory>1</mandatory>
+        <data-type>tinyint(20) unsigned</data-type>
+      </column>
+      <column id="4" parent="2" name="userName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="5" parent="2" name="userPwd">
+        <mandatory>1</mandatory>
+        <data-type>varchar(20)</data-type>
+      </column>
+      <column id="6" parent="2" name="userPhone">
+        <mandatory>1</mandatory>
+        <data-type>varchar(11)</data-type>
+      </column>
+      <index id="7" parent="2" name="userId">
+        <columns>userId</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="8" parent="2" name="userId_2">
+        <columns>userId</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="9" parent="2" name="userPhone">
+        <columns>userPhone</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="10" parent="2" name="PRIMARY">
+        <columns>userId</columns>
+        <primary>1</primary>
+      </key>
+      <key id="11" parent="2" name="userId_2">
+        <columns>userId</columns>
+        <underlying-index>userId_2</underlying-index>
+      </key>
+      <key id="12" parent="2" name="userPhone">
+        <columns>userPhone</columns>
+        <underlying-index>userPhone</underlying-index>
+      </key>
+    </database-model>
+  </data-source>
+</component>

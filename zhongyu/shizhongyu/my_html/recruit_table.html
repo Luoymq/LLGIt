@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Viewport指用户网页的可视区域，content中的“width”指的是虚拟窗口宽度，
+    上面代码意为虚拟窗口/页面宽度初始比例为1，最小比例为1，最大比例为1，用户不可扩展，页面不可缩放-->
+    <meta charset="UTF-8">
+    <title>招聘实习生面试登记表</title>
+    <style type="text/css">
+        .container{
+            padding-top: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        .top{
+            font-family: 新宋体;
+            font-size: 25px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .header{
+            line-height: 25px;
+        }
+        .content .text{
+            width: 100%;
+        }
+        .radio{
+            display:none;
+        }
+        .radio+label{
+            width: 15px;
+            height: 15px;
+            line-height:15px;
+            display: inline-block;
+            text-align: center;
+            vertical-align: bottom;
+            border: 1px solid gray;
+            border-radius: 50%;
+        }
+        .radio+label:hover{
+            border: 1px solid #2783FB;
+            cursor: pointer;
+        }
+        .radio:checked+label{
+            background: #2783FB;
+            border: 1px solid #2783FB;
+        }
+        .sub_button{
+            width: 95%;
+            height: 30px;
+            background-color:#2aabd2;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<!--- DOM ---->
+<form action="single.html" name="recruit" id="recruit" onsubmit="return check(this)" method="post">
+    <div class="container">
+        <div class="top">招聘实习生面试登记表</div>
+        <div class="header">
+            <div style="font-size: 20px">岗位职责:</div>
+            <div style="text-indent: 30px">
+                <div>1.负责公司招聘工作，根据人事经理安排招聘任务完成招聘工作</div>
+                <div>2.开发招聘渠道，并对现有渠道进行维护</div>
+                <div>3.协助进行校园招聘等工作</div>
+                <div>4.安排应聘者面试、复试流程以及相关通知工作</div>
+                <div>5.为新入职员工办理入职手续，安排工作岗位</div>
+                <div>6.协助上级完善公司人才库建设</div>
+            </div>
+            <div style="font-size: 20px">任职要求：</div>
+            <div style="text-indent: 30px">1.对招聘工作热爱，且愿意在本职位发展<hr></div>
+        </div>
+        <div class="content">
+            <div style="margin-bottom: 20px">1.姓名<span style="color: red">*</span><br>
+                <input class="text" name="name" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px">2.手机<span style="color: red">*</span><br>
+                <input class="text" name="phone" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px">3.QQ号<span style="color: red">*</span><br>
+                <input class="text" name="qq_num" type="text" required >
+            </div>
+            <div style="margin-bottom: 20px">4.性别<span style="color: red">*</span><br>
+                <div style="text-indent: 10px">
+                    男<input class="radio" type="radio" name="sec"id="男"><label for="男"></label><br></div>
+                <div style="text-indent: 10px">
+                    女<input class="radio" type="radio" name="sec"id="女"><label for="女"></label></div>
+            </div>
+            <div style="margin-bottom: 20px">5.在读学校<span style="color: red">*</span><br>
+                <input class="text" name="school" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px">6.年级<span style="color: red">*</span><br>
+                <input class="text" name="grade" type="text" required>
+            </div>
+            <div style="margin-bottom: 20px">7.所学专业<br>
+                <input class="text" type="text">
+            </div>
+            <div style="margin-bottom: 20px">8.所能实习时间<br>
+                <div style="text-indent: 10px">
+                    一周三天<input class="radio" type="radio" name="time"id="一周三天"><label for="一周三天"></label><br></div>
+                <div style="text-indent: 10px">
+                    一周四天<input class="radio" type="radio" name="time"id="一周四天"><label for="一周四天"></label><br></div>
+                <div style="text-indent: 10px">
+                    一周五天<input class="radio" type="radio" name="time"id="一周五天"><label for="一周五天"></label></div>
+            </div>
+            <div style="margin-bottom: 20px">9.是否加入社团<br>
+                <div style="text-indent: 10px">是<input class="radio" type="radio" name="comm"id="是1"><label for="是1"></label><br></div>
+                <div style="text-indent: 10px">否<input class="radio" type="radio" name="comm"id="否1"><label for="否1"></label></div>
+            </div>
+            <div style="margin-bottom: 20px">10.在校期间是否举办过活动<br>
+                <div style="text-indent: 10px">是<input class="radio" type="radio" name="activity"id="是"><label for="是"></label><br></div>
+                <div style="text-indent: 10px">否<input class="radio" type="radio" name="activity"id="否"><label for="否"></label></div>
+            </div><hr>
+        </div>
+        <div class="footer" style="margin-top: 15px">
+            <button class="sub_button" type="submit" style="text-align: center">提交</button>
+        </div>
+    </div>
+</form>
+</body>
+<script language="JavaScript">
+    function check (theform)
+    {
+        if (recruit.name.value=="")
+        {
+            alert("请您填写姓名！");
+            recruit.name.focus();
+            return (false);
+        }
+        if (recruit.phone.value=="")
+        {
+            alert("请您填写手机号！");
+            recruit.phone.focus();
+            return (false);
+        }
+        if (recruit.qq_num.value=="")
+        {
+            alert("请您填写QQ号！");
+            recruit.qq_num.focus();
+            return (false);
+        }
+        if (recruit.school.value=="")
+        {
+            alert("请您填写学校！");
+            recruit.school.focus();
+            return (false);
+        }
+        if (recruit.grade.value=="")
+        {
+            alert("请您填写年级！");
+            recruit.grade.focus();
+            return (false);
+        }
+        if (recruit.man.value=="" && recruit.woman.value=="")
+        {
+            alert("请您选择性别！");
+            recruit.man.focus();
+            return (false);
+        }
+        return (true);
+    }
+</script>
+</html>
